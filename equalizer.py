@@ -5,9 +5,9 @@ from permutations import perm
 def read(sign, length):
     tab = None
     try:
-        with open("./podzielone/" + sign + "/" + str(length) + ".txt") as f:
+        with open("./div/" + sign + "/" + str(length) + ".txt") as f:
             tab = f.read().splitlines()
-            # f = open("./podzielone/" + sign + "/" + str(length) + ".txt")
+            # f = open("./div/" + sign + "/" + str(length) + ".txt")
             # tab = list(f)
     except:
         pass

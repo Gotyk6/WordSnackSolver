@@ -4,7 +4,7 @@ alpha = 'aąbcćdeęfghijklłmnńoópqrsśtuvwxyzźż'
 
 
 def wrr(tab, sign, length):
-    with open("./podzielone/" + sign + "/" + length + ".txt", 'w') as f:
+    with open("./div/" + sign + "/" + length + ".txt", 'w') as f:
         for i in range(len(tab)):
             f.write(tab[i])
 
@@ -12,7 +12,7 @@ def wrr(tab, sign, length):
 def mkdir():
     for sign in alpha:
         try:
-            os.makedirs("./podzielone/" + sign)
+            os.makedirs("./div/" + sign)
         except:
             pass
 
@@ -68,7 +68,7 @@ def read(name):
 
 def do():
     mkdir()
-    full_tab = read("slowa.txt")
+    full_tab = read("dic.txt")
     tab = do_tab_of_signs(full_tab)
 
     for i in tab:
