@@ -18,7 +18,6 @@ class Solver:
     def get_correct_words(self, letters, length):
         permutation_tab = self.prepare_list_of_permutations(letters, length)
 
-        global literals_tab
         word_list = []
         for char in self.alphabeth:
             if char in letters:
@@ -32,8 +31,9 @@ class Solver:
 
 
 if __name__ == "__main__":
+
     solver = Solver()
     while True:
         letters = input("Give me letters (ex. abba): ")
         length = int(input("Give me word length: "))
-        print("Answers: ", "\n".join(solver.get_correct_words(letters, length)))
+        print("Answers:\n", "\n".join(solver.get_correct_words(letters, length)))

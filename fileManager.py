@@ -27,8 +27,7 @@ class FilesManger:
 
     def slice_list(self, whole_list, characters):
         tab = []
-        tup = tuple([x for x in characters])
-        whole_list = [x for x in whole_list if x.startswith(tup)]
+        whole_list = [x for x in whole_list if x.startswith(tuple(characters))]
 
         for char in characters:
             inner_tab = []
@@ -68,16 +67,6 @@ class FilesManger:
         with open("./" + self.folder_with_dictionaries + "/" + sign + "/" + str(length) + ".txt", 'w') as f:
             for i in range(len(tab)):
                 f.write(tab[i])
-
-    # def read_word_list(self, name, length):
-    #     tab = None
-    #     try:
-    #         with open("./" + self.folder_with_dictionaries + "/" + name + "/" + str(length) + ".txt") as f:
-    #             tab = f.read().splitlines()
-    #     except FileNotFoundError as ex:
-    #         print(ex)
-    #
-    #     return tab
 
     def read_dictionary(self, sign, length):
         tab = None
